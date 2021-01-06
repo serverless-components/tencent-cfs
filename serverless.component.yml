@@ -1,0 +1,93 @@
+name: cfs
+version: 0.0.1
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Tencent CFS Component
+keywords: tencent, serverless, cfs
+repo: https://github.com/serverless-components/tencent-cfs
+readme: https://github.com/serverless-components/tencent-cfs/tree/master/README.md
+license: MIT
+main: ./src
+
+actions:
+  deploy:
+    definition: Deploy CFS
+    inputs:
+      name:
+        type: string
+        description: cfs name
+      region:
+        type: string
+        description: cfs region
+        default: ap-guangzhou
+        allow:
+          - ap-beijing
+          - ap-chengdu
+          - ap-chongqing
+          - ap-guangzhou
+          - ap-hongkong
+          - ap-mumbai
+          - ap-nanjing
+          - ap-seoul
+          - ap-shanghai
+          - ap-shanghai-fsi
+          - ap-shenzhen-fsi
+          - ap-singapore
+          - ap-tokyo
+          - na-siliconvalley
+          - na-toronto
+      zone:
+        type: string
+        description: cfs zone
+        default: ap-guangzhou-3
+      networkType:
+        type: string
+        description: network type
+        default: VPC
+        allow:
+          - VPC
+          - BASIC
+      protocol:
+        type: string
+        description: file system protocol
+        default: NFS
+        allow:
+          - NFS
+          - SMB # CIFS
+      storageType:
+        type: string
+        description: file system storage type
+        default: SD
+        allow:
+          - SD
+          - HP
+      vpc:
+        type: object
+        description: VPC Config
+        keys:
+          vpcId:
+            type: string
+          subnetId:
+            type: string
+          mountIp:
+            type: string
+            description: specify IP for VPC
+      pGroupId:
+        type: string
+        description: specify IP for VPC
+
+  remove:
+    definition: Remove CFS
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+org: orgDemo
+app: appDemo
+stage: dev
+
+component: cfs@dev
+name: clsDemo
+
+inputs:
+  name: cfs-test
+  region: ap-guangzhou
+  zone: ap-guangzhou-3
+  vpc:
+    vpcId: vpc-p2dlmlbj
+    subnetId: subnet-qaf708t2
