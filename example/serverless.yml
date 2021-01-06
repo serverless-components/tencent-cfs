@@ -2,7 +2,7 @@ org: orgDemo
 app: appDemo
 stage: dev
 
-component: cfs@dev
+component: cfs
 name: clsDemo
 
 inputs:
