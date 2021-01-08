@@ -75,6 +75,19 @@ actions:
       pGroupId:
         type: string
         description: specify IP for VPC
+      tags:
+        type: array
+        description: Tag for cfs
+        items:
+          - type: object
+            description: key-value
+            keys:
+              key:
+                type: string
+                required: true
+              value:
+                type: string
+                required: true
 
   remove:
     definition: Remove CFS
