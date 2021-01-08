@@ -25,7 +25,7 @@ inputs:
   protocol: NFS
   tags:
     - key: slstest
-      values: slstest
+      value: slstest
 ```
 
 ## 配置描述
