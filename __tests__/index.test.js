@@ -17,7 +17,7 @@ const instanceYaml = {
     tags:[
       {
         key: 'slstest',
-        values: 'slstest'
+        value: 'slstest'
       }
     ]
   }
