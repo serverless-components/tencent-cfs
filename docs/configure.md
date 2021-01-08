@@ -23,21 +23,25 @@ inputs:
   storageType: SD
   pGroupId: pgroupbasic
   protocol: NFS
+  tags:
+    - key: slstest
+      values: slstest
 ```
 
 ## 配置描述
 
 主要的参数
 
-| 名称        | 必选 |    类型     |    默认值     | 描述                           |
-| ----------- | :--: | :---------: | :-----------: | :----------------------------- |
-| name        |  是  |   string    |               | 日志集名称，不能和历史名称重复 |
-| region      |  是  |   string    |               | CFS 所在地域                   |
-| zone        |  是  |   string    |               | CFS 所在可用区                 |
-| vpc         |  是  | [Vpc](#Vpc) |               | VPC 配置                       |
-| storageType |  否  |   string    |     `SD`      | 存储类型，目前只支持 SD        |
-| pGroupId    |  否  |   string    | `pgroupbasic` | 权限组                         |
-| protocol    |  否  |   string    |     `NFS`     | 文件服务协议                   |
+| 名称        | 必选 |     类型      |    默认值     | 描述                           |
+| ----------- | :--: | :-----------: | :-----------: | :----------------------------- |
+| name        |  是  |    string     |               | 日志集名称，不能和历史名称重复 |
+| region      |  是  |    string     |               | CFS 所在地域                   |
+| zone        |  是  |    string     |               | CFS 所在可用区                 |
+| vpc         |  是  |  [Vpc](#Vpc)  |               | VPC 配置                       |
+| storageType |  否  |    string     |     `SD`      | 存储类型，目前只支持 SD        |
+| pGroupId    |  否  |    string     | `pgroupbasic` | 权限组                         |
+| protocol    |  否  |    string     |     `NFS`     | 文件服务协议                   |
+| tag         |  否  | [Tag](#Tag)[] |               | 标签配置                       |
 
 > 注意：对于 `protocol` 配置，如果要关联云函数，只能配置为 `NFS`。如果要挂在到客户端， Linux 推荐使用 `NFS` 协议, Windows 推荐使用 `SMB` 协议
 
@@ -48,3 +52,10 @@ inputs:
 | vpcId    |  是  | string |        | 私有网络 ID           |
 | subnetId |  是  | string |        | 私有网络子网 ID       |
 | mountIp  |  否  | string |        | 指定配置的私有网络 IP |
+
+### Tag
+
+| 名称  | 必选 |  类型  | 默认值 | 描述   |
+| ----- | :--: | :----: | :----: | :----- |
+| key   |  是  | string |        | 标签键 |
+| value |  是  | string |        | 标签值 |

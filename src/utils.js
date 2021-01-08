@@ -20,7 +20,7 @@ const initializeInputs = async (instance, inputs = {}) => {
   const { state } = instance
   const region = inputs.region || CONFIGS.region
 
-  const clsInputs = {
+  const clsInputs = Object.assign(inputs, {
     region,
     zone: inputs.zone || CONFIGS.zone,
     fileSystemId: inputs.cfsId || state.cfsId,
@@ -28,9 +28,8 @@ const initializeInputs = async (instance, inputs = {}) => {
     protocol: CONFIGS.protocolMap[inputs.protocol] || CONFIGS.protocol,
     netInterface: inputs.netInterface || CONFIGS.netInterface,
     storageType: inputs.storageType || CONFIGS.storageType,
-    pGroupId: inputs.pGroupId || CONFIGS.pGroupId,
-    vpc: inputs.vpc
-  }
+    pGroupId: inputs.pGroupId || CONFIGS.pGroupId
+  })
 
   return {
     region,

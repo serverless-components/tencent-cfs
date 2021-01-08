@@ -13,7 +13,13 @@ const instanceYaml = {
     vpc: {
       vpcId: "vpc-p2dlmlbj",
       subnetId: "subnet-qaf708t2"
-    }
+    },
+    tags:[
+      {
+        key: 'slstest',
+        values: 'slstest'
+      }
+    ]
   }
 }
 
@@ -42,7 +48,8 @@ it('Using template should deploy success', async () => {
     pGroupId: 'pgroupbasic',
     protocol: 'NFS',
     netInterface: 'VPC',
-    vpc: instanceYaml.inputs.vpc
+    vpc: instanceYaml.inputs.vpc,
+    tags: instanceYaml.inputs.tags
   })
 })
 
