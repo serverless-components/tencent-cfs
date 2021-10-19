@@ -2,7 +2,7 @@ name: cfs
 version: 0.0.2
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
-description: Tencent CFS Component
+description: CFS 网关组件， 允许用户创建部署一个文件存储(CFS)实例。配合项目需要管理腾讯云的 CFS 共享文件存储。
 keywords: tencent, serverless, cfs
 repo: https://github.com/serverless-components/tencent-cfs
 readme: https://github.com/serverless-components/tencent-cfs/tree/master/README.md
